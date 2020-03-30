@@ -1,0 +1,22 @@
+{
+  "name": "notebook",
+  "version": "1.0.0",
+  "description": "notebook app",
+  "main": "note-model.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/poliver24/notebook-js.git"
+  },
+  "author": "Patrick and Stephan",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/poliver24/notebook-js/issues"
+  },
+  "homepage": "https://github.com/poliver24/notebook-js#readme",
+  "dependencies": {
+    "http-server": "^0.12.1"
+  }
+}
