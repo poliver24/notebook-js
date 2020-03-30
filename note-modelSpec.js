@@ -35,6 +35,32 @@ function testNewNote() {
     console.log(output);
 };
 
+function testNoteListOutput() {
+    console.log('testNoteListOutput');
+
+    var notelistview = new NoteListView
+    note = new Note('hello handsome')
+    notelistview.noteList.notes.push(note)
+    output = assert.isTrue(notelistview.listOutput() === "<ul><li><div>hello handsome</div></li></ul>")
+
+    console.log(output);
+}
+
+function testEmptyNoteListOutput() {
+    console.log('testNoteListOutput');
+    var notelistview = new NoteListView
+    try {
+        notelistview.listOutput()
+    } catch (err) {
+        if (err.message === "You have no notes to print") {
+            output = assert.isTrue(true);
+        }   
+    }
+    console.log(output);
+}
+
     testNoteText();
     testEmptyNotesArray();
     testNewNote();
+    testNoteListOutput();
+    testEmptyNoteListOutput();
