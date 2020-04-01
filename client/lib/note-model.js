@@ -1,6 +1,7 @@
 class Note {
-    constructor (text) {
+    constructor (text, id) {
         this.text = text;
+        this.id = id
     };
 
     returnText() {
@@ -20,8 +21,17 @@ class NoteList {
     }
 
     newNote(text) {
-        let note = new Note(text)
+        let ID = this.noteID()
+        let note = new Note(text, ID)
         this.notes.push(note)
+    }
+
+    noteID() {
+       return this.notes.length
+    }
+
+    getNote(id){
+       return this.notes.find(note => note.id === id)
     }
 }
 

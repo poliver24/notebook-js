@@ -26,7 +26,6 @@ function testEmptyNotesArray() {
 
 function testNewNote() {
     console.log('testNewNote');
-    
     var notelist = new NoteList();
     notelist.newNote('hello handsome');
     note = notelist.notes[0]
@@ -37,18 +36,19 @@ function testNewNote() {
 
 function testNoteListOutput() {
     console.log('testNoteListOutput');
-
-    var notelistview = new NoteListView
+    var notelist = new NoteList()
+    var notelistview = new NoteListView(notelist)
     note = new Note('hello handsome')
     notelistview.noteList.notes.push(note)
-    output = assert.isTrue(notelistview.listOutput() === "<ul><li><div>hello handsome</div></li></ul>")
+    output = assert.isTrue(notelistview.listOutput() === "<ul><li><div><a>hello handsome</a></div></li></ul>")
 
     console.log(output);
 }
 
 function testEmptyNoteListOutput() {
     console.log('testNoteListOutput');
-    var notelistview = new NoteListView
+    var notelist = new NoteList();
+    var notelistview = new NoteListView(notelist);
     try {
         notelistview.listOutput()
     } catch (err) {
@@ -59,8 +59,38 @@ function testEmptyNoteListOutput() {
     console.log(output);
 }
 
+function testNoteController() {
+    console.log('tests NoteController and only shows 20 characters')
+    var controller = new noteController()
+    controller.getList();
+    console.log(document.getElementById('app').innerHTML);
+    
+    output = assert.isTrue(document.getElementById('app').innerHTML === "<ul><li><div><a>Favourite drink: sel</a></div></li></ul>")
+    console.log(output)
+}
+
+function testSingleNoteView() {
+    console.log('testSingleNoteView')
+    var singleNote = new singleNoteView(new Note('The sky is grey'))
+    output = assert.isTrue(singleNote.noteOutput() === "<div>The sky is grey</div>")
+    console.log(output)
+}
+
+function testGetNoteByID() {
+    console.log('testGetNoteByID');
+    var notelist = new NoteList;
+    notelist.newNote('hello world')
+    notelist.newNote('I like sandwiches')
+    output = assert.isTrue(notelist.getNote(0).text === 'hello world')
+    console.log(output)
+    
+}
+
+
     testNoteText();
     testEmptyNotesArray();
     testNewNote();
     testNoteListOutput();
     testEmptyNoteListOutput();
+    testNoteController();
+    testGetNoteByID();

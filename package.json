@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/poliver24/notebook-js#readme",
   "dependencies": {
-    "http-server": "^0.12.1"
+    "express": "^4.17.1"
   }
 }

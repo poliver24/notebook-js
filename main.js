@@ -1,9 +1,5 @@
-var httpServer = require("http-server");
-var path = require("path");
+const express = require('express');
+const app = express();
 
-var pathToHtmlAndJsFiles = ("client");
-var server = httpServer.createServer({
-    root: pathToHtmlAndJsFiles
-});
-server.listen(3000, () => console.log('listening at 3000'));
-
+app.listen(3000, () => console.log('listening at 3000'));
+app.use(express.static('client'));
