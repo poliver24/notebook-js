@@ -5,12 +5,12 @@ class NoteListView {
 
   listOutput() {
     if (this.noteList.notes.length === 0) {
-      throw new Error("You have no notes to print");
+      var list = "<div>You have no notes to print</div>"
     } else {
-      var list = "<ul><li><div><a href=#" + this.noteList.notes.map(note => note.id + ">" + note.text.slice(0, 20)).join("</a></div></li><div><li><a href=") + "</a></div></li></ul>";
+      var list = "<ul><li><div><a href=#" + this.noteList.notes.map(note => note.id + ">" + note.text.slice(0, 20)).join("</a></div></li><div><li><a href=#") + "</a></div></li></ul>";
       // document.getElementById("list").innerHTML = list;
-      return list;
-    };
+    }
+    return list;
   };
 
   notesText() {
