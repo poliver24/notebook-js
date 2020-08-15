@@ -6,7 +6,6 @@ Why not take a dedicated Note Organiser for a spin!
 ## Table of content
 
 - [Installation](#installation)
-- [Database](#database)
 - [Running the application](#running-the-application)
 - [Tech stack](#tech-stack)
 
