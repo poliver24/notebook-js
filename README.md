@@ -5,9 +5,15 @@ Why not take a dedicated Note Organiser for a spin!
 
 ## Table of content
 
+- [Tech stack](#tech-stack)
 - [Installation](#installation)
 - [Running the application](#running-the-application)
-- [Tech stack](#tech-stack)
+
+## Tech stack
+
+- JavaScript
+- Node
+- Express
 
 ## Installation
 
@@ -38,9 +44,3 @@ This was a weekend challenge completed as a part of Makers Academy.
 
 The aim of this project was to work on building a fully TDD'd Vanilla JavaScript application using the revealing module pattern. 
 The application follows SRP and clean code principles throughout, as well as being fully tested. 
-
-## Tech stack
-
-- JavaScript
-- Node
-- Express
